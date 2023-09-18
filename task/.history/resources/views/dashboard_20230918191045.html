@@ -314,22 +314,11 @@
             const savestate = localStorage.getItem(`toggle_${idx}`);
             console.log(savestate)
 
-            // return savestate ? JSON.parse(savestate) : false;
+            return savestate ? JSON.parse(savestate) : false;
 
 
-            if (savestate === "true") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('left-0', 'right-0');
-                slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
+            if(savestate){
                 JSON.parse(savestate)
-
-            } else if(savestate === "false") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('right-0', 'left-0');
-                slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
-                false
             }
 
 
@@ -360,7 +349,7 @@
                 updatetogglestate(idx, this.checked)
 
 
-            
+                console.log(localStorage.getItem(`toggle_${idx}`) === 'false')
 
             });
 

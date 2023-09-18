@@ -309,58 +309,67 @@
 
 
 
-        function gettogglestate(idx) {
+        // function gettogglestate(idx) {
 
-            const savestate = localStorage.getItem(`toggle_${idx}`);
-            console.log(savestate)
+        //     console.log(savestate)
 
-            // return savestate ? JSON.parse(savestate) : false;
-
-
-            if (savestate === "true") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('left-0', 'right-0');
-                slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
-                JSON.parse(savestate)
-
-            } else if(savestate === "false") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('right-0', 'left-0');
-                slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
-                false
-            }
+        //     // return savestate ? JSON.parse(savestate) : false;
+        //     const slide = document.querySelectorAll('.slide');
 
 
+        //     if (savestate === "true") {
+        //         const slide = document.querySelectorAll('.slide');
 
-        }
-        gettogglestate();
+        //         slide[idx].classList.replace('left-0', 'right-0');
+        //         slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
+        //         JSON.parse(savestate)
+
+        //     } else {
+        //         const slide = document.querySelectorAll('.slide');
+
+        //         slide[idx].classList.replace('right-0', 'left-0');
+        //         slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
+        //         return false;
+        //     }
+
+
+
+        // }
+        // gettogglestate();
 
 
         const toggleSwitches = document.querySelectorAll('.togglebtn');
 
         toggleSwitches.forEach((toggleswitch, idx) => {
 
-            toggleswitch.checked = gettogglestate(idx);
 
 
 
 
             toggleswitch.addEventListener('change', function () {
+
+                const savestate = localStorage.getItem(`toggle_${idx}`);
+
                 const slide = document.querySelectorAll('.slide');
-                if (this.checked) {
-                    slide[idx].classList.replace('left-0', 'right-0');
-                    slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
+
+                if (this.checked && savestate === 'true') {
+                    console.log('hio')
+
+                    // slide[idx].classList.replace('left-0', 'right-0');
+                    // slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
+                    // JSON.parse(savestate)
+
                 } else {
-                    slide[idx].classList.replace('right-0', 'left-0');
-                    slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
+                    // slide[idx].classList.replace('right-0', 'left-0');
+                    // slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
+                    // return false;
+
                 }
 
                 updatetogglestate(idx, this.checked)
 
 
-            
+                console.log(localStorage.getItem(`toggle_${idx}`) === 'false')
 
             });
 

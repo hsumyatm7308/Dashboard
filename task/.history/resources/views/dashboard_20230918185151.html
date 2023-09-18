@@ -307,36 +307,12 @@
             localStorage.setItem(`toggle_${idx}`, JSON.stringify(checked));
         }
 
-
-
         function gettogglestate(idx) {
-
             const savestate = localStorage.getItem(`toggle_${idx}`);
-            console.log(savestate)
-
-            // return savestate ? JSON.parse(savestate) : false;
-
-
-            if (savestate === "true") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('left-0', 'right-0');
-                slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
-                JSON.parse(savestate)
-
-            } else if(savestate === "false") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('right-0', 'left-0');
-                slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
-                false
-            }
-
+            return savestate ? JSON.parse(savestate) : false;
 
 
         }
-        gettogglestate();
-
 
         const toggleSwitches = document.querySelectorAll('.togglebtn');
 
@@ -346,13 +322,18 @@
 
 
 
-
             toggleswitch.addEventListener('change', function () {
                 const slide = document.querySelectorAll('.slide');
-                if (this.checked) {
-                    slide[idx].classList.replace('left-0', 'right-0');
+                if (this.checked && localStorage.getItem(`toggle_${idx}`) === 'true') {
+                    // slide[idx].classList.replace('left-0', 'right-0');
+                    slide[idx].innerHTML = ` <div
+                                                class="absolute right-0 w-5 h-5 rounded-full bg-stone-100 drop-shadow-lg transform translate-x-0 transition-transform slide">
+                                            </div>`
+
+                               console.log(slide[idx].innerHTML + "kjlsad")             
+
                     slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
-                } else {
+                } else if(localStorage.getItem(`toggle_${idx}`) === 'false') {
                     slide[idx].classList.replace('right-0', 'left-0');
                     slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
                 }
@@ -360,7 +341,7 @@
                 updatetogglestate(idx, this.checked)
 
 
-            
+                console.log(localStorage.getItem(`toggle_${idx}`) === 'false')
 
             });
 

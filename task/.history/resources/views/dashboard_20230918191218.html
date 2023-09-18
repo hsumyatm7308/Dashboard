@@ -324,12 +324,9 @@
                 slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
                 JSON.parse(savestate)
 
-            } else if(savestate === "false") {
-                const slide = document.querySelectorAll('.slide');
+            } else {
 
-                slide[idx].classList.replace('right-0', 'left-0');
-                slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
-                false
+                return false;
             }
 
 
@@ -360,7 +357,7 @@
                 updatetogglestate(idx, this.checked)
 
 
-            
+                console.log(localStorage.getItem(`toggle_${idx}`) === 'false')
 
             });
 

@@ -236,7 +236,7 @@
 
                     <div class="w-full flex items-center border-b border-b-gray-700   pl-10 pr-4  py-5 ">
                         <div class="w-full text-white flex justify-between items-center">
-                            <h3 class="text-xl text-blue-600">Settings</h3>
+                            <h3 class="text-xl">Settings</h3>
                             <div class="w-10 h-10 flex justify-center items-center flex-col rounded-full  bg-100">
                                 <div class="w-8 h-2 border-2 border-gray-500 transform rotate-45 translate-y-1"></div>
                                 <div class="w-8 h-2 border-2 border-gray-500 transform -rotate-45 -translate-y-1"></div>
@@ -246,32 +246,19 @@
 
 
                     <div>
-                        <div class=" pl-10 pr-4  py-5">
+                        <div>
                             <ul>
-                                <li class="text-white flex justify-between items-center mb-4">
-                                    <span class="">New order notifications</span>
+                                <li class="text-white">
+                                    <span>New order notifications</span>
                                     <label for="toggle-switch" class="flex items-center cursor-pointer">
-                                        <input type="checkbox" id="toggle-switch" class="hidden togglebtn">
+                                        <input type="checkbox" id="toggle-switch" class="hidden">
                                         <div class="relative w-10 h-5 bg-gray-700 rounded-lg">
                                             <div
-                                                class="absolute left-0 w-5 h-5 rounded-full bg-stone-100 drop-shadow-lg transform translate-x-0 transition-transform slide">
+                                                class="absolute left-0 w-5 h-5 rounded-full bg-stone-100 transform translate-x-0 transition-transform slide">
                                             </div>
                                         </div>
                                     </label>
                                 </li>
-
-                                <li class="text-white flex justify-between items-center mb-4">
-                                    <span class="">Order Tracking</span>
-                                    <label for="toggle-switch2" class="flex items-center cursor-pointer">
-                                        <input type="checkbox" id="toggle-switch2" class="hidden togglebtn">
-                                        <div class="relative w-10 h-5 bg-gray-700 rounded-lg">
-                                            <div
-                                                class="absolute left-0 w-5 h-5 rounded-full bg-stone-100 drop-shadow-lg transform translate-x-0 transition-transform slide">
-                                            </div>
-                                        </div>
-                                    </label>
-                                </li>
-
 
                             </ul>
                         </div>
@@ -303,68 +290,21 @@
         });
 
 
-        function updatetogglestate(idx, checked) {
-            localStorage.setItem(`toggle_${idx}`, JSON.stringify(checked));
-        }
+        // Add event listener to toggle switch
+        const toggleswitch = document.getElementById('toggle-switch');
+        toggleswitch.addEventListener('change', function () {
+            const slide = document.querySelector('.slide');
+            if (this.checked) {
+                // Toggle is ON
+                slide.classList.replace('left-0','right-0');
+                slide.parentElement.classList.replace('bg-gray-700','bg-stone-500')
 
+            } else {
+                // Toggle is OFF
+                slide.classList.replace('right-0','left-0');
+                slide.parentElement.classList.replace('bg-gray-700','bg-gray-500')
 
-
-        function gettogglestate(idx) {
-
-            const savestate = localStorage.getItem(`toggle_${idx}`);
-            console.log(savestate)
-
-            // return savestate ? JSON.parse(savestate) : false;
-
-
-            if (savestate === "true") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('left-0', 'right-0');
-                slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
-                JSON.parse(savestate)
-
-            } else if(savestate === "false") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('right-0', 'left-0');
-                slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
-                false
             }
-
-
-
-        }
-        gettogglestate();
-
-
-        const toggleSwitches = document.querySelectorAll('.togglebtn');
-
-        toggleSwitches.forEach((toggleswitch, idx) => {
-
-            toggleswitch.checked = gettogglestate(idx);
-
-
-
-
-            toggleswitch.addEventListener('change', function () {
-                const slide = document.querySelectorAll('.slide');
-                if (this.checked) {
-                    slide[idx].classList.replace('left-0', 'right-0');
-                    slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
-                } else {
-                    slide[idx].classList.replace('right-0', 'left-0');
-                    slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
-                }
-
-                updatetogglestate(idx, this.checked)
-
-
-            
-
-            });
-
-
         });
 
 

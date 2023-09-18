@@ -303,69 +303,61 @@
         });
 
 
-        function updatetogglestate(idx, checked) {
-            localStorage.setItem(`toggle_${idx}`, JSON.stringify(checked));
+        function updateToggleState(idx, checked) {
+    localStorage.setItem(`toggle_${idx}`, JSON.stringify(checked));
+}
+
+function getToggleState(idx) {
+    const savedState = localStorage.getItem(`toggle_${idx}`);
+    return savedState ? JSON.parse(savedState) : false;
+}
+
+// Function to update UI state in localStorage
+function updateUIState(idx, uiState) {
+    localStorage.setItem(`ui_${idx}`, JSON.stringify(uiState));
+}
+
+// Function to retrieve UI state from localStorage
+function getUIState(idx) {
+    const savedUIState = localStorage.getItem(`ui_${idx}`);
+    return savedUIState ? JSON.parse(savedUIState) : null;
+}
+
+const toggleSwitches = document.querySelectorAll('.togglebtn');
+
+toggleSwitches.forEach((toggleswitch, idx) => {
+    toggleswitch.addEventListener('change', function () {
+        const slide = document.querySelectorAll('.slide');
+
+        // Always apply UI changes based on the saved state in localStorage
+        const savedToggleState = getToggleState(idx);
+        if (savedToggleState) {
+            slide[idx].classList.replace('left-0', 'right-0');
+            slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
+        } else {
+            slide[idx].classList.replace('right-0', 'left-0');
+            slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
         }
 
+        // Update the toggle state in localStorage
+        updateToggleState(idx, this.checked);
 
+        // Save the UI state (for example, you can save the class changes)
+        const uiState = {
+            slideClass: slide[idx].getAttribute('class'),
+            parentClass: slide[idx].parentElement.getAttribute('class')
+        };
+        updateUIState(idx, uiState);
+    });
 
-        function gettogglestate(idx) {
+    // Restore the UI state when the page loads
+    const savedUIState = getUIState(idx);
+    if (savedUIState) {
+        slide[idx].setAttribute('class', savedUIState.slideClass);
+        slide[idx].parentElement.setAttribute('class', savedUIState.parentClass);
+    }
+});
 
-            const savestate = localStorage.getItem(`toggle_${idx}`);
-            console.log(savestate)
-
-            // return savestate ? JSON.parse(savestate) : false;
-
-
-            if (savestate === "true") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('left-0', 'right-0');
-                slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
-                JSON.parse(savestate)
-
-            } else if(savestate === "false") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('right-0', 'left-0');
-                slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
-                false
-            }
-
-
-
-        }
-        gettogglestate();
-
-
-        const toggleSwitches = document.querySelectorAll('.togglebtn');
-
-        toggleSwitches.forEach((toggleswitch, idx) => {
-
-            toggleswitch.checked = gettogglestate(idx);
-
-
-
-
-            toggleswitch.addEventListener('change', function () {
-                const slide = document.querySelectorAll('.slide');
-                if (this.checked) {
-                    slide[idx].classList.replace('left-0', 'right-0');
-                    slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
-                } else {
-                    slide[idx].classList.replace('right-0', 'left-0');
-                    slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
-                }
-
-                updatetogglestate(idx, this.checked)
-
-
-            
-
-            });
-
-
-        });
 
 
     </script>

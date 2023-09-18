@@ -261,9 +261,9 @@
                                 </li>
 
                                 <li class="text-white flex justify-between items-center mb-4">
-                                    <span class="">Order Tracking</span>
-                                    <label for="toggle-switch2" class="flex items-center cursor-pointer">
-                                        <input type="checkbox" id="toggle-switch2" class="hidden togglebtn">
+                                    <span class="">New order notifications</span>
+                                    <label for="toggle-switch" class="flex items-center cursor-pointer">
+                                        <input type="checkbox" id="toggle-switch" class="hidden togglebtn">
                                         <div class="relative w-10 h-5 bg-gray-700 rounded-lg">
                                             <div
                                                 class="absolute left-0 w-5 h-5 rounded-full bg-stone-100 drop-shadow-lg transform translate-x-0 transition-transform slide">
@@ -303,69 +303,25 @@
         });
 
 
-        function updatetogglestate(idx, checked) {
-            localStorage.setItem(`toggle_${idx}`, JSON.stringify(checked));
-        }
+        // Add event listener to toggle switch
+        const toggleswitchs = document.querySelectorAll('.togglebtn');
 
 
-
-        function gettogglestate(idx) {
-
-            const savestate = localStorage.getItem(`toggle_${idx}`);
-            console.log(savestate)
-
-            // return savestate ? JSON.parse(savestate) : false;
-
-
-            if (savestate === "true") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('left-0', 'right-0');
-                slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
-                JSON.parse(savestate)
-
-            } else if(savestate === "false") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('right-0', 'left-0');
-                slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
-                false
-            }
-
-
-
-        }
-        gettogglestate();
-
-
-        const toggleSwitches = document.querySelectorAll('.togglebtn');
-
-        toggleSwitches.forEach((toggleswitch, idx) => {
-
-            toggleswitch.checked = gettogglestate(idx);
-
-
-
+        toggleswitchs.forEach((toggleswitch) => {
 
             toggleswitch.addEventListener('change', function () {
                 const slide = document.querySelectorAll('.slide');
                 if (this.checked) {
-                    slide[idx].classList.replace('left-0', 'right-0');
-                    slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
+                    slide.classList.replace('left-0', 'right-0');
+                    slide.parentElement.classList.replace('bg-gray-700', 'bg-gray-500')
+
                 } else {
-                    slide[idx].classList.replace('right-0', 'left-0');
-                    slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
+                    slide.classList.replace('right-0', 'left-0');
+                    slide.parentElement.classList.replace('bg-gray-500', 'bg-gray-700')
+
                 }
-
-                updatetogglestate(idx, this.checked)
-
-
-            
-
             });
-
-
-        });
+        })
 
 
     </script>

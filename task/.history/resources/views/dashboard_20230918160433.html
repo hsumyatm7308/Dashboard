@@ -307,36 +307,10 @@
             localStorage.setItem(`toggle_${idx}`, JSON.stringify(checked));
         }
 
-
-
         function gettogglestate(idx) {
-
             const savestate = localStorage.getItem(`toggle_${idx}`);
-            console.log(savestate)
-
-            // return savestate ? JSON.parse(savestate) : false;
-
-
-            if (savestate === "true") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('left-0', 'right-0');
-                slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
-                JSON.parse(savestate)
-
-            } else if(savestate === "false") {
-                const slide = document.querySelectorAll('.slide');
-
-                slide[idx].classList.replace('right-0', 'left-0');
-                slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
-                false
-            }
-
-
-
+            return savestate ? JSON.parse(savestate) : false;
         }
-        gettogglestate();
-
 
         const toggleSwitches = document.querySelectorAll('.togglebtn');
 
@@ -344,8 +318,7 @@
 
             toggleswitch.checked = gettogglestate(idx);
 
-
-
+            console.log(toggleswitch.checked === "true")
 
             toggleswitch.addEventListener('change', function () {
                 const slide = document.querySelectorAll('.slide');
@@ -358,9 +331,6 @@
                 }
 
                 updatetogglestate(idx, this.checked)
-
-
-            
 
             });
 
