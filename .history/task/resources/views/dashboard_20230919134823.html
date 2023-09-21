@@ -11,22 +11,16 @@
     #toggle-switch:checked+.relative .rounded-full {
         transform: translate-x-full;
     }
-
-    .modal-dialog.none {
-        transition: all 1s;
-        display: none;
-    }
 </style>
 
-<body class="overflow-x-hidden">
+<body>
     <section>
         <nav class="w-screen bg-gray-800">
             <div class=" flex justify-end items-center relative p-2">
                 <div
-                    class="lg:w-[20%] md:w-[30%] md:block hidden flex justify-center items-center absolute left-0 top-0 ">
+                    class="lg:w-[20%] md:w-[30%] md:block hidden flex justify-center items-center absolute left-0 top-0 p-2">
                     <!-- side bar  -->
-                    <div
-                        class="w-full  flex justify-center items-center border-r border-r-gray-700 border-b border-b-gray-700 py-2">
+                    <div class="w-[95%]  flex justify-center items-center border-r">
                         <!-- brand  -->
                         <div class="text-gray-200 ">
                             <span class="text-3xl"> Admin</span>
@@ -36,7 +30,7 @@
                     </div>
 
                 </div>
-                <div class="lg:w-[80%] md:w-[70%] sm:w-full  flex justify-between items-center p-3 pl-3">
+                <div class="lg:w-[80%] md:w-[70%] sm:w-full  flex justify-between items-center p-3 pl-0">
                     <div class="flex justify-center items-center ml-4 md:ml-0">
                         <div class="w-10 h-10 flex justify-center items-center flex-col rounded-full bg-gray-200">
                             <div>
@@ -64,7 +58,7 @@
 
                     <div class="md:mr-10 sm:mr-0 flex justify-center items-center">
                         <div
-                            class="w-16 bg-gray-200 text-gray-600 rounded-lg flex justify-center items-center hidden md:flex cursor-pointer hover:bg-gray-300  py-2 mr-3  setting-btn">
+                            class="w-16 bg-gray-200 text-gray-600 rounded-lg flex justify-center items-center hidden md:flex cursor-pointer hover:bg-gray-300  py-2 mr-3 ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -232,20 +226,18 @@
 
         <!-- setting modal  -->
         <div>
-            <div class="modal flex justify-center items-center  ">
+            <div class="modal flex justify-center items-center">
 
                 <div
-                    class="w-full h-[100vh] bg-[linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5))] fixed left-0 top-0 modal-dialog none">
+                    class="w-full h-[100vh] bg-[linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5))] fixed left-0 top-0 modal-dialog">
                 </div>
 
-                <div
-                    class="w-[450px] h-[100vh] bg-gray-800  transition-all duration-200 absolute z-10 -right-[100%] top-0 modal-body">
+                <div class="w-[450px] h-[100vh] bg-gray-800  absolute z-10 right-0 top-0">
 
                     <div class="w-full flex items-center border-b border-b-gray-700   pl-10 pr-4  py-5 ">
                         <div class="w-full text-white flex justify-between items-center">
                             <h3 class="text-xl text-blue-600">Settings</h3>
-                            <div
-                                class="w-12 h-12 flex justify-center items-center flex-col rounded-full hover:border-2 hover:border-gray-900 setting-x">
+                            <div class="w-10 h-10 flex justify-center items-center flex-col rounded-full  bg-100">
                                 <div class="w-8 h-2 border-2 border-gray-500 transform rotate-45 translate-y-1"></div>
                                 <div class="w-8 h-2 border-2 border-gray-500 transform -rotate-45 -translate-y-1"></div>
                             </div>
@@ -284,8 +276,8 @@
 
                                 <li class="text-white flex justify-between items-center mb-4">
                                     <span class="">Show Review</span>
-                                    <label for="toggle-switch3" class="flex items-center cursor-pointer">
-                                        <input type="checkbox" id="toggle-switch3" class="hidden togglebtn">
+                                    <label for="toggle-switch2" class="flex items-center cursor-pointer">
+                                        <input type="checkbox" id="toggle-switch2" class="hidden togglebtn">
                                         <div class="relative w-10 h-5 bg-gray-700 rounded-lg">
                                             <div
                                                 class="absolute left-0 w-5 h-5 rounded-full bg-stone-100 drop-shadow-lg transform translate-x-0 transition-transform slide">
@@ -302,64 +294,22 @@
 
 
                     <!-- account  -->
-                    <div class="pl-10 pr-4 mt-4">
-                        <div class="text-gray-600 mb-10">
-                            <span class="text-lg">Select Account</span>
+                    <div>
+                        <div>
+                            <span>Select Account</span>
                         </div>
-                        <div class="flex flex-wrap justify-between">
-                            <div
-                                class="w-40 h-40 bg-slate-700 group hover:bg-gray-900 flex flex-col justify-center items-center space-y-3 mb-16">
-                                <div class="flex justify-center items-center flex-col">
-                                    <div class="w-12 h-12 bg-gray-600 rounded-full mb-2">
-                                        <img src="" alt="">
-                                    </div>
+                        <div class="flex flex-wrap justify-between pl-10 pr-4">
+                            <div class="w-40 h-40 bg-gray-700 mb-10">
 
-                                    <span class="text-white">John Luwis</span>
-                                </div>
-                                <span class="text-sm text-slate-500 group-hover:text-gray-600">Admin</span>
                             </div>
 
-                            <div
-                                class="w-40 h-40 bg-slate-700 group hover:bg-gray-900 flex flex-col justify-center items-center space-y-3 mb-16">
-                                <div class="flex justify-center items-center flex-col">
-                                    <div class="w-12 h-12 bg-gray-600 rounded-full mb-2">
-                                        <img src="" alt="">
-                                    </div>
+                            <div class="w-40 h-40 bg-gray-700">
 
-                                    <span class="text-white">John Luwis</span>
-                                </div>
-                                <span class="text-sm text-slate-500 group-hover:text-gray-600">Editor</span>
                             </div>
 
-                            <div
-                                class="w-40 h-40 bg-slate-700 group hover:bg-gray-900 flex flex-col justify-center items-center space-y-3 ">
-                                <div class="flex justify-center items-center flex-col">
-                                    <div class="w-12 h-12 bg-gray-600 rounded-full mb-2">
-                                        <img src="" alt="">
-                                    </div>
+                            <div class="w-40 h-40 bg-gray-700">
 
-                                    <span class="text-white">John Luwis</span>
-                                </div>
-                                <span class="text-sm text-slate-500 group-hover:text-gray-600">Editor</span>
                             </div>
-
-                            <div
-                                class="w-40 h-40 bg-slate-700 group hover:bg-gray-900 flex flex-col justify-center items-center space-y-3 ">
-                                <div class="flex justify-center items-center flex-col">
-                                    <div
-                                        class="w-12 h-12 bg-gray-600 group-hover:bg-gray-800 flex justify-center items-center flex-col rounded-full  bg-100 mb-2">
-                                        <div
-                                            class="w-8 h-2 border-2 border-slate-500 group-hover:border-gray-500 transform rotate-90 translate-y-1">
-                                        </div>
-                                        <div
-                                            class="w-8 h-2 border-2 border-slate-500 group-hover:border-gray-500 transform -rotate-180 -translate-y-1">
-                                        </div>
-                                    </div>
-
-                                    <span class="text-white">Add Account</span>
-                                </div>
-                            </div>
-
                         </div>
 
                     </div>
@@ -375,73 +325,6 @@
 
     </section>
 
-    <style>
-        .setting-effect {
-            transition: all .5s;
-            right: 0;
-        }
-
-        .setting-effect-x {
-            transition: all .2s;
-            right: -100%;
-        }
-    </style>
-
-
-
-    <main>
-        <div class="">
-            <nav class="w-screen ">
-                <div class=" flex justify-end items-center relative p-2">
-                    <div
-                        class="lg:w-[20%] md:w-[30%] bg-gray-800 md:block hidden flex justify-center items-center absolute left-0 top-0 p-2">
-                        <!-- side bar  -->
-                        <div class="w-full h-[90vh]  flex justify-start items-start ">
-                            <!-- brand  -->
-                            <div class="text-gray-200 ">
-                                <div class="list-none">
-                                    <li class="pl-10">
-                                        <a href="#" class="flex justify-center items-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-500">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-                                            </svg>
-
-                                            <span class="ml-2"> Product List </span>
-                                        </a>
-                                    </li>
-
-
-                                    <li class="pl-10">
-                                        <a href="#" class="flex justify-center items-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-500">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-                                            </svg>
-
-                                            <span class="ml-2"> Product List </span>
-                                        </a>
-                                    </li>
-
-                                </div>
-                            </div>
-  
-                        </div>
-
-                    </div>
-                    <div class="lg:w-[80%] md:w-[70%] sm:w-full  flex justify-between items-center p-3 pl-0">
-
-                    </div>
-
-                </div>
-
-
-            </nav>
-        </div>
-    </main>
-
 
 
 
@@ -455,36 +338,6 @@
             });
         });
 
-        const modalbody = document.querySelector('.modal-body');
-        const modaldialog = document.querySelector('.modal-dialog');
-
-        function toggleModalClasses() {
-            modaldialog.classList.toggle('none');
-            modalbody.classList.toggle('setting-effect');
-        }
-
-        const settingbtn = document.querySelector('.setting-btn');
-        settingbtn.addEventListener('click', toggleModalClasses);
-
-        const settingx = document.querySelector('.setting-x');
-        settingx.addEventListener('click', toggleModalClasses);
-
-
-
-
-        function toggleopen(idx) {
-            const slide = document.querySelectorAll('.slide');
-
-            slide[idx].classList.replace('left-0', 'right-0');
-            slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
-        }
-
-        function toggleclose(idx) {
-            const slide = document.querySelectorAll('.slide');
-
-            slide[idx].classList.replace('right-0', 'left-0');
-            slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
-        }
 
         function updatetogglestate(idx, checked) {
             localStorage.setItem(`toggle_${idx}`, JSON.stringify(checked));
@@ -495,21 +348,30 @@
         function gettogglestate(idx) {
 
             const savestate = localStorage.getItem(`toggle_${idx}`);
+            console.log(savestate)
+
+            // return savestate ? JSON.parse(savestate) : false;
+
 
             if (savestate === "true") {
+                const slide = document.querySelectorAll('.slide');
 
-                toggleopen(idx);
+                slide[idx].classList.replace('left-0', 'right-0');
+                slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
                 JSON.parse(savestate)
 
             } else if (savestate === "false") {
-                toggleclose(idx);
+                const slide = document.querySelectorAll('.slide');
 
+                slide[idx].classList.replace('right-0', 'left-0');
+                slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
                 false
             }
 
 
 
         }
+        gettogglestate();
 
 
         const toggleSwitches = document.querySelectorAll('.togglebtn');
@@ -518,15 +380,23 @@
 
             toggleswitch.checked = gettogglestate(idx);
 
+
+
+
             toggleswitch.addEventListener('change', function () {
                 const slide = document.querySelectorAll('.slide');
                 if (this.checked) {
-                    toggleopen(idx);
+                    slide[idx].classList.replace('left-0', 'right-0');
+                    slide[idx].parentElement.classList.replace('bg-gray-700', 'bg-gray-500');
                 } else {
-                    toggleclose(idx);
+                    slide[idx].classList.replace('right-0', 'left-0');
+                    slide[idx].parentElement.classList.replace('bg-gray-500', 'bg-gray-700');
                 }
 
-                updatetogglestate(idx, this.checked);
+                updatetogglestate(idx, this.checked)
+
+
+
 
             });
 
