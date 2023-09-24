@@ -23,7 +23,7 @@
         <nav class="w-screen bg-gray-800">
             <div class=" flex justify-end items-center relative p-2">
                 <div
-                    class="lg:w-[20%] md:w-[30%] md:block hidden flex justify-center items-center absolute left-0 top-0  navsidebar-toggle">
+                    class="lg:w-[20%] md:w-[30%] md:block hidden flex justify-center items-center absolute left-0 top-0 ">
                     <!-- side bar  -->
                     <div
                         class="w-full  flex justify-center items-center border-r border-r-gray-700 border-b border-b-gray-700 py-2">
@@ -36,14 +36,9 @@
                     </div>
 
                 </div>
-
-
-
-
-                <div class="lg:w-[80%] md:w-[70%] sm:w-full  flex justify-between items-center p-3 pl-3  navbarwidth">
+                <div class="lg:w-[80%] md:w-[70%] sm:w-full  flex justify-between items-center p-3 pl-3">
                     <div class="flex justify-center items-center ml-4 md:ml-0">
-                        <div
-                            class="w-10 h-10 flex justify-center items-center flex-col rounded-full bg-gray-200 navsidebar-expendbtn">
+                        <div class="w-10 h-10 flex justify-center items-center flex-col rounded-full bg-gray-200">
                             <div>
                                 <div class="w-4 h-1 border border-gray-500 rounded mb-[2px]"></div>
                                 <div class="w-5 h-1 border border-gray-500 rounded mb-[2px]"></div>
@@ -380,6 +375,17 @@
 
     </section>
 
+    <style>
+        .setting-effect {
+            transition: all .5s;
+            right: 0;
+        }
+
+        .setting-effect-x {
+            transition: all .2s;
+            right: -100%;
+        }
+    </style>
 
 
 
@@ -388,7 +394,7 @@
             <nav class="w-screen ">
                 <div class=" flex justify-end items-center relative p-2">
                     <div
-                        class="lg:w-[20%] md:w-[30%] bg-gray-800 md:block hidden flex justify-center items-center absolute left-0 top-0 p-2  navsidebar-toggle">
+                        class="lg:w-[20%] md:w-[30%] bg-gray-800 md:block hidden flex justify-center items-center absolute left-0 top-0 p-2">
                         <!-- side bar  -->
                         <div class="w-full h-[90vh]  flex justify-start items-start ">
                             <!-- brand  -->
@@ -413,7 +419,7 @@
 
 
 
-                                    <li class="w-full pl-2 flex  items-center group">
+                                    <li class="w-full pl-2   flex  items-center">
                                         <div class="px-3">
                                             <a href="#" class="flex justify-start items-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -427,7 +433,7 @@
 
 
 
-                                                <span class="ml-4 group-hover:text-gray-400"> Product Details </span>
+                                                <span class="ml-4"> Product Details </span>
                                             </a>
                                         </div>
                                     </li>
@@ -436,7 +442,7 @@
 
 
 
-                                    <li class="w-full pl-2   flex  items-center group">
+                                    <li class="w-full pl-2   flex  items-center">
                                         <div class="px-3">
                                             <a href="#" class="flex justify-start items-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -447,13 +453,13 @@
                                                 </svg>
 
 
-                                                <span class="ml-4 group-hover:text-gray-400"> Order List </span>
+                                                <span class="ml-4"> Order List </span>
                                             </a>
                                         </div>
                                     </li>
 
 
-                                    <li class="w-full pl-2   flex  items-center group">
+                                    <li class="w-full pl-2   flex  items-center">
                                         <div class="px-3">
                                             <a href="#" class="flex justify-start items-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -464,7 +470,7 @@
                                                 </svg>
 
 
-                                                <span class="ml-4 group-hover:text-gray-400"> Order Details </span>
+                                                <span class="ml-4"> Order Details </span>
                                             </a>
                                         </div>
                                     </li>
@@ -488,32 +494,6 @@
         </div>
     </main>
 
-
-    <style>
-        .setting-effect {
-            transition: all .5s;
-            right: 0;
-        }
-
-        .setting-effect-x {
-            transition: all .2s;
-            right: -100%;
-        }
-    </style>
-
-    <style>
-        .navsidebar {
-            transition: all .5s;
-            position: absolute;
-            left: -500px;
-        }
-
-
-        .navbar{
-            transition: all .5s;
-            width: 100%;
-        }
-    </style>
 
 
 
@@ -604,20 +584,6 @@
 
 
         });
-
-
-
-        const navsidebarexp = document.querySelector('.navsidebar-expendbtn');
-        const navbarwidth = document.querySelector('.navbarwidth');
-        const navsidebartoggle = document.querySelectorAll('.navsidebar-toggle');
- 
-
-        navsidebarexp.addEventListener('click', () => {
-           navbarwidth.classList.toggle('navbar');
-           for(var i = 0; i < navsidebartoggle.length; i++){
-            navsidebartoggle[i].classList.toggle('navsidebar')
-           }
-        })
 
 
     </script>

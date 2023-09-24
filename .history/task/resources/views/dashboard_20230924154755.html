@@ -23,7 +23,7 @@
         <nav class="w-screen bg-gray-800">
             <div class=" flex justify-end items-center relative p-2">
                 <div
-                    class="lg:w-[20%] md:w-[30%] md:block hidden flex justify-center items-center absolute left-0 top-0  navsidebar-toggle">
+                    class="lg:w-[20%] md:w-[30%] md:block hidden flex justify-center items-center absolute left-0 top-0 navsidebar navsidebar-toggle">
                     <!-- side bar  -->
                     <div
                         class="w-full  flex justify-center items-center border-r border-r-gray-700 border-b border-b-gray-700 py-2">
@@ -40,7 +40,7 @@
 
 
 
-                <div class="lg:w-[80%] md:w-[70%] sm:w-full  flex justify-between items-center p-3 pl-3  navbarwidth">
+                <div class="lg:w-[80%] md:w-[70%] sm:w-full  flex justify-between items-center p-3 pl-3 navbar navbarwidth">
                     <div class="flex justify-center items-center ml-4 md:ml-0">
                         <div
                             class="w-10 h-10 flex justify-center items-center flex-col rounded-full bg-gray-200 navsidebar-expendbtn">
@@ -388,7 +388,7 @@
             <nav class="w-screen ">
                 <div class=" flex justify-end items-center relative p-2">
                     <div
-                        class="lg:w-[20%] md:w-[30%] bg-gray-800 md:block hidden flex justify-center items-center absolute left-0 top-0 p-2  navsidebar-toggle">
+                        class="lg:w-[20%] md:w-[30%] bg-gray-800 md:block hidden flex justify-center items-center absolute left-0 top-0 p-2 navsidebar navsidebar-toggle">
                         <!-- side bar  -->
                         <div class="w-full h-[90vh]  flex justify-start items-start ">
                             <!-- brand  -->
@@ -503,14 +503,12 @@
 
     <style>
         .navsidebar {
-            transition: all .5s;
             position: absolute;
             left: -500px;
         }
 
 
         .navbar{
-            transition: all .5s;
             width: 100%;
         }
     </style>
@@ -609,14 +607,9 @@
 
         const navsidebarexp = document.querySelector('.navsidebar-expendbtn');
         const navbarwidth = document.querySelector('.navbarwidth');
-        const navsidebartoggle = document.querySelectorAll('.navsidebar-toggle');
- 
-
+        
         navsidebarexp.addEventListener('click', () => {
-           navbarwidth.classList.toggle('navbar');
-           for(var i = 0; i < navsidebartoggle.length; i++){
-            navsidebartoggle[i].classList.toggle('navsidebar')
-           }
+
         })
 
 
