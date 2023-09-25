@@ -529,12 +529,7 @@
                 const otheridx = Array.from(navtoggleitem).map((ele,i) => i).filter(i => i !== idx);
 
                 otheridx.forEach(othidx => {
-                   const getAttribute =   useraccountmodal[otheridx].parentElement.getAttribute('hidden');
-
-                   if(getAttribute === null){
-                    useraccountmodal[otheridx].parentElement.toggleAttribute('hidden')
-                   }
-                    
+                    useraccountmodal[otheridx].parentElement.setAttribute('hidden')
                 })
             });
         });

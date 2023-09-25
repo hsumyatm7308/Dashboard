@@ -524,18 +524,7 @@
         Array.from(navtoggleitem).forEach((ele, idx) => {
             ele.addEventListener('click', function () {
                 useraccountmodal[idx].parentElement.toggleAttribute('hidden');
-
-
-                const otheridx = Array.from(navtoggleitem).map((ele,i) => i).filter(i => i !== idx);
-
-                otheridx.forEach(othidx => {
-                   const getAttribute =   useraccountmodal[otheridx].parentElement.getAttribute('hidden');
-
-                   if(getAttribute === null){
-                    useraccountmodal[otheridx].parentElement.toggleAttribute('hidden')
-                   }
-                    
-                })
+                console.log(useraccountmodal[idx])
             });
         });
 
