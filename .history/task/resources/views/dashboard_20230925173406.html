@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="md:mr-10 sm:mr-0 flex justify-center items-center">
-                        <div
+                        <div 
                             class="w-16 bg-gray-200 text-gray-600 rounded-lg flex justify-center items-center hidden md:flex cursor-pointer hover:bg-gray-300  py-2 mr-3 setting-btn ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-6 h-6">
@@ -108,7 +108,19 @@
                                 </svg>
 
                             </div>
+
+
+
+
+
+
                         </div>
+
+
+
+
+
+
 
                         <div>
 
@@ -189,7 +201,7 @@
         </div>
 
         <!-- useraccount modal  -->
-        <div class="" hidden>
+        <div class="" >
             <div class="w-52 bg-gray-800 border rounded shadow-lg absolute right-5 md:right-12 top-20 mt-1 modal">
                 <div class="text-gray-200 flex justify-center items-center flex-col pb-3">
                     <div class="w-full flex justify-center items-center border-b border-b-gray-100">
@@ -232,8 +244,8 @@
 
 
 
-                    <div id="" class="flex justify-center items-center self-start p-3 pb-4 setting-btn">
-
+                    <div id="setting-btn" class="flex justify-center items-center self-start p-3 pb-4 ">
+                      
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -562,14 +574,15 @@
         function toggleModalClasses() {
             modaldialog.classList.toggle('none');
             modalbody.classList.toggle('setting-effect');
+
+            console.log('hi')
         }
 
-
+        
 
         const settingbtn = document.querySelectorAll('.setting-btn');
-        settingbtn.forEach(btn => {
-            btn.onclick = toggleModalClasses;
-        })
+        console.log(settingbtn)
+        settingbtn.addEventListener('click', toggleModalClasses);
 
         const settingx = document.querySelector('.setting-x');
         settingx.addEventListener('click', toggleModalClasses);
@@ -646,29 +659,10 @@
 
 
         navsidebarexp.addEventListener('click', () => {
-            if (window.innerWidth < 768) {
-                for (var i = 0; i < navsidebartoggle.length; i++) {
-
-                    navsidebartoggle[i].classList.replace('sm:-left-[100%]', 'sm:left-0');
-                    console.log('jio')
-                }
-
-                console.log('hiopj')
-
-
-            } else {
-
-                navbarwidth.classList.toggle('navbar');
-                for (var i = 0; i < navsidebartoggle.length; i++) {
-                    navsidebartoggle[i].classList.toggle('navsidebar');
-
-
-                }
+            navbarwidth.classList.toggle('navbar');
+            for (var i = 0; i < navsidebartoggle.length; i++) {
+                navsidebartoggle[i].classList.toggle('navsidebar')
             }
-
-
-
-
         })
 
 

@@ -646,29 +646,10 @@
 
 
         navsidebarexp.addEventListener('click', () => {
-            if (window.innerWidth < 768) {
-                for (var i = 0; i < navsidebartoggle.length; i++) {
-
-                    navsidebartoggle[i].classList.replace('sm:-left-[100%]', 'sm:left-0');
-                    console.log('jio')
-                }
-
-                console.log('hiopj')
-
-
-            } else {
-
-                navbarwidth.classList.toggle('navbar');
-                for (var i = 0; i < navsidebartoggle.length; i++) {
-                    navsidebartoggle[i].classList.toggle('navsidebar');
-
-
-                }
+            navbarwidth.classList.toggle('navbar');
+            for (var i = 0; i < navsidebartoggle.length; i++) {
+                navsidebartoggle[i].classList.toggle('navsidebar')
             }
-
-
-
-
         })
 
 
