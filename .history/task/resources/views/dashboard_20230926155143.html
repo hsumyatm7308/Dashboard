@@ -12,7 +12,7 @@
         transform: translate-x-full;
     }
 
-    .none {
+    .modal-dialog.none {
         transition: all 1s;
         display: none;
     }
@@ -93,7 +93,7 @@
                         </div>
 
 
-                        <div class="flex justify-center items-center mr-3">
+                        <div class="flex justify-center items-center">
                             <div class="w-10 h-10 flex justify-center items-center flex-col rounded-full bg-gray-200">
                                 <img src="" alt="">
                             </div>
@@ -405,14 +405,12 @@
             <nav class="w-screen ">
 
                 <div
-                    class="w-full h-[100vh] bg-[linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5))] fixed right-0 top-0 modaldialog none ">
+                    class="w-full h-[100vh] bg-[linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5))] fixed right top-0 ">
                 </div>
 
                 <div class=" flex justify-end items-center relative p-2">
                     <div
                         class="lg:w-[20%] md:w-[30%] sm:w-[40%]  md:block  bg-gray-800 flex justify-center items-center absolute md:left-0 top-0 sm:-left-[100%] z-10  navsidebar-toggle">
-
-
 
                         <!-- side bar  -->
                         <div class="w-full h-[90vh]  flex justify-start items-start ">
@@ -651,7 +649,6 @@
         const navsidebarexp = document.querySelector('.navsidebar-expendbtn');
         const navbarwidth = document.querySelector('.navbarwidth');
         const navsidebartoggle = document.querySelectorAll('.navsidebar-toggle');
-        const modaldialogside = document.querySelector('.modaldialog');
 
 
         navsidebarexp.addEventListener('click', () => {
@@ -662,9 +659,9 @@
                     navbarwidth.classList.add('navbar');
 
                     console.log(navbarwidth)
-                    modaldialogside.classList.remove('none');
                 }
 
+                console.log('hiopj')
 
 
             } else {
@@ -682,15 +679,11 @@
 
         })
 
-
-        modaldialogside.addEventListener('click', function (event) {
+        document.addEventListener('click', function (event) {
             for (var i = 0; i < navsidebartoggle.length; i++) {
 
-
-                navsidebartoggle[i].classList.remove('navsidebar')
-                navsidebartoggle[i].classList.replace('sm:left-0', 'sm:-left-[100%]');
-
-                event.target.classList.add('none')
+                navsidebartoggle[i].classList.replace('sm:-left-[100%]', 'sm:left-0');
+                navbarwidth.classList.add('navbar');
 
 
 
