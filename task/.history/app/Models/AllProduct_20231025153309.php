@@ -14,14 +14,11 @@ class AllProduct extends Model
     protected $fillable = [
         'imgurl',
         'perfume_name',
+        'stock',
         'price',
-        'mili',
-        'category_name',
-        'fsletter',
-        'brand_name',
-        'description',
-        'qty',
-        'status'
+        'categorary',
+        'order',
+        'date'
     ];
 
 

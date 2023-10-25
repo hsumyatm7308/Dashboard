@@ -1,11 +1,10 @@
 <?php
 
+use App\Http\Controllers\dashboardbackendController;
 use App\Http\Controllers\UserprofileController;
-use App\Models\Productdetail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Items;
-use App\Http\Controllers\dashboardbackendController;
-use App\Http\Controllers\productdetailController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +25,6 @@ Route::get('items/index', [Items::class, 'index']);
 
 Route::get('userprofile/edit',[UserprofileController::class,'index']);
 
-Route::get('dashboard/product-list',[dashboardbackendController::class,'productlist'])->name('productlist');
+Route::get('dashboard/productlist',[dashboardbackendController::class,'productlist']);
 
-Route::get('dashboard/product-detail',[productdetailController::class,'index'])->name('productdetail');
+Route::get('');

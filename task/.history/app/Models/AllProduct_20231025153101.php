@@ -9,19 +9,16 @@ class AllProduct extends Model
 {
     use HasFactory;
 
-    protected $table = 'perfume';
+    protected $table = '';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'imgurl',
-        'perfume_name',
+        'photo',
+        'name',
+        'stock',
         'price',
-        'mili',
-        'category_name',
-        'fsletter',
-        'brand_name',
-        'description',
-        'qty',
-        'status'
+        'categorary',
+        'order',
+        'date'
     ];
 
 

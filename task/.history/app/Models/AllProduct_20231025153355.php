@@ -17,11 +17,8 @@ class AllProduct extends Model
         'price',
         'mili',
         'category_name',
-        'fsletter',
-        'brand_name',
-        'description',
-        'qty',
-        'status'
+        'order',
+        'date'
     ];
 
 

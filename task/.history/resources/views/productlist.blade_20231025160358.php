@@ -10,8 +10,8 @@
         <p class="text-sm text-gray-500">Home > Product List</p>
         </div>
     <div class="w-full h-[80vh] flex justify-start items-center mt-5">
-    <div class="w-[95%] h-full bg-gray-100 overflow-y-auto rounded scrollbar-hide "> 
-        <div class=" sticky top-0 bg-gray-100 flex justify-between items-center border-b border-b-gray-300 p-4">
+    <div class="w-[95%] h-full bg-gray-100 overflow-y-auto rounded scrollbar-hide"> 
+        <div class=" flex justify-between items-center border-b border-b-gray-300 p-4">
               <p class=" font-semibold text-gray-700">All Products</p>
               <div class="text-sm mr-5">
                     <select name="" id="" class="bg-gray-100 rounded border border-blue-500 p-1 outline-none">
@@ -19,14 +19,14 @@
                         <option value="lw">Last Week</option>
                         <option value="lm">Last Month</option>
                     </select>
-                </div>
+        </div>
 
 
         </div>
 
 
 
-        <table class="w-full  border-separate border-spacing-x-2 border-spacing-y-3 mt-2">
+        <table class="w-full border-separate border-spacing-x-2 border-spacing-y-3 mt-2">
             <tr class="text-center">
                 <th class="text-sm text-gray-500">ID</th>
                 <th class="text-sm text-gray-500">Photo</th>
@@ -46,7 +46,7 @@
                     <td class="">{{++$idx}}</td>
                     <td class="">{{$product->imgurl}}</td>
                     <td class="text-justify bg-green-00">{{$product->perfume_name}}</td>
-                    <td><span class=" text-green-500 rounded-md p-1">{{$product->status}}</span></td>
+                    <td><span class=" text-green-500 rounded-md p-1">{{$product->stock}}</span></td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->category_name}}</td>
                     <td></td>

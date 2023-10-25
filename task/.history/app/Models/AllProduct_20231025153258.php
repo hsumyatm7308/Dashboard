@@ -13,15 +13,12 @@ class AllProduct extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
         'imgurl',
-        'perfume_name',
+        'name',
+        'stock',
         'price',
-        'mili',
-        'category_name',
-        'fsletter',
-        'brand_name',
-        'description',
-        'qty',
-        'status'
+        'categorary',
+        'order',
+        'date'
     ];
 
 

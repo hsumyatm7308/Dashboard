@@ -442,7 +442,7 @@
 
                                         <li class="w-full pl-2  flex  items-center group py-2 ">
                                             <div class="px-3 ">
-                                                <a href="{{route('productlist')}}" class="flex justify-start items-center group hover:text-blue-500">
+                                                <a href="{{route('../productlist')}}" class="flex justify-start items-center group hover:text-blue-500">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                                         class="w-6 h-6 text-gray-500 group-hover:text-blue-500">
                                                         <path stroke-linecap="round" stroke-linejoin="round"

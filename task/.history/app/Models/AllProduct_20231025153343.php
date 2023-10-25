@@ -16,12 +16,9 @@ class AllProduct extends Model
         'perfume_name',
         'price',
         'mili',
-        'category_name',
-        'fsletter',
-        'brand_name',
-        'description',
-        'qty',
-        'status'
+        'categorary_name',
+        'order',
+        'date'
     ];
 
 

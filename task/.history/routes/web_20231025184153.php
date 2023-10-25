@@ -28,4 +28,4 @@ Route::get('userprofile/edit',[UserprofileController::class,'index']);
 
 Route::get('dashboard/product-list',[dashboardbackendController::class,'productlist'])->name('productlist');
 
-Route::get('dashboard/product-detail',[productdetailController::class,'index'])->name('productdetail');
+Route::get('dashboard/product-detail',[productdetailController::class,'index']);

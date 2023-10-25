@@ -26,7 +26,7 @@
 
 
 
-        <table class="w-full  border-separate border-spacing-x-2 border-spacing-y-3 mt-2">
+        <table class="w-full bg-green-500 border-separate border-spacing-x-2 border-spacing-y-3 mt-2">
             <tr class="text-center">
                 <th class="text-sm text-gray-500">ID</th>
                 <th class="text-sm text-gray-500">Photo</th>
@@ -46,7 +46,7 @@
                     <td class="">{{++$idx}}</td>
                     <td class="">{{$product->imgurl}}</td>
                     <td class="text-justify bg-green-00">{{$product->perfume_name}}</td>
-                    <td><span class=" text-green-500 rounded-md p-1">{{$product->status}}</span></td>
+                    <td><span class=" text-green-500 rounded-md p-1">{{$product->stock}}</span></td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->category_name}}</td>
                     <td></td>

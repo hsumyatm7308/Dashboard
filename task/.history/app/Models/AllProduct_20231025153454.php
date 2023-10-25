@@ -20,7 +20,6 @@ class AllProduct extends Model
         'fsletter',
         'brand_name',
         'description',
-        'qty',
         'status'
     ];
 

@@ -15,13 +15,10 @@ class AllProduct extends Model
         'imgurl',
         'perfume_name',
         'price',
-        'mili',
-        'category_name',
-        'fsletter',
-        'brand_name',
-        'description',
-        'qty',
-        'status'
+        'price',
+        'categorary',
+        'order',
+        'date'
     ];
 
 

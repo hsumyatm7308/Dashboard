@@ -46,7 +46,7 @@
                     <td class="">{{++$idx}}</td>
                     <td class="">{{$product->imgurl}}</td>
                     <td class="text-justify bg-green-00">{{$product->perfume_name}}</td>
-                    <td><span class=" text-green-500 rounded-md p-1">{{$product->status}}</span></td>
+                    <td><span class=" text-green-500 rounded-md p-1">{{$product->stock}}</span></td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->category_name}}</td>
                     <td></td>
