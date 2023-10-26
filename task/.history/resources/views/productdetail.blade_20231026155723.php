@@ -23,7 +23,7 @@
                 <p class="text-[15px] font-semibold text-gray-700">Product Detail</p>
             </div>
 
-            <div class="w-full p-4 mt-5">
+            <div class="w-full p-4">
 
                 <form action="" method="post" enctype="multipart/form-data">
                     <p class="text-[15px] mb-3">Product Title</p>
